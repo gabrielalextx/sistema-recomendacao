@@ -1,7 +1,8 @@
+import streamlit as st
 import random
-import item
-import user
-from pisson import recommend
+import apps.item as item
+import apps.user as user
+from apps.pisson import recommend
 
 
 def main():
@@ -28,13 +29,29 @@ def main():
             if not random.randint(0, 1):
                 u.set_rating(list_items[i].name, list_items[i].category, random.randint(0, 10))
 
-    print(recommend(list_users[0], list_users))
-    print(list_users[0])
-    '''while player.n_rated_items < 3:
+    #print(recommend(list_users[0], list_users))
+    #print(list_users[0])
+
+    #print(list_users[0].category_tastes)
+    #print(list_users[1].category_tastes)
+
+    player = user.User("User")
+    for i in range(1, 6):
+            player.set_category_taste(i, random.uniform(0.5, 1.5))
+
+    """
+    it = list_items[0]
+    st.write(it.name)
+    text = st.text_input("Avalie o jogo de 0 a 10:", "0")
+    text = int(text)
+    player.set_rating(it.name, it.category, text)
+    st.write(player.get_rating(it.name))
+    """
+    """while player.n_rated_items < 3:
         it = random.choice(list_items)
         if player.rated_items[it.name] is None:
             rating = int(input(f"rate {it.name}: "))
-            player.set_rating(it.name, rating)'''
-
+            player.set_rating(it.name, rating)
+    """
 
 main()

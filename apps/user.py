@@ -1,11 +1,13 @@
 class User:
     name = ""
     n_rated_items = 0
-    category_tastes = {}
+    
 
     def __init__(self, name):
         self.name = name
         self.rated_items = {}
+        self.category_tastes = {}
+
 
     def __str__(self):
 
