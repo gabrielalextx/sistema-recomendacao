@@ -24,7 +24,10 @@ class User:
         self.rated_items[item_name] = round(x)
 
     def get_rating(self, item_name):
-        return self.rated_items[item_name]
+        if item_name in self.rated_items.keys():
+            return self.rated_items[item_name]
+        else:
+            return 0
 
     def set_category_taste(self, category, taste):
         self.category_tastes[category] = taste
