@@ -6,8 +6,8 @@ def app():
     st.title("Escolha")
     st.write("Por favor, avalie cada um dos jogos com notas de 0 a 10:")
 
-    player_file = open("apps\\player.txt", "rb")
-    player_recommendations_file = open("apps\\player_initial_recommendations.txt", "rb")
+    player_file = open("player.txt", "rb")
+    player_recommendations_file = open("player_initial_recommendations.txt", "rb")
     player_initial_recommendations = pickle.load(player_recommendations_file)
     player = pickle.load(player_file)
     col1, col2, col3 = st.columns(3)
@@ -16,7 +16,7 @@ def app():
         item = player_initial_recommendations[0]
         st.write(item.name)
         rating = st.number_input("Avalie de 0 a 10:", min_value=0, max_value=10, value=player.get_rating(item.name), key=1)
-        player.set_rating(item.name, item.category, int(rating))
+        player.set_rating(item.name, item.category, rating)
 
     with col2:
         item = player_initial_recommendations[1]
@@ -30,5 +30,5 @@ def app():
         rating = st.number_input("Avalie de 0 a 10:", min_value=0, max_value=10, value=player.get_rating(item.name), key=3)
         player.set_rating(item.name, item.category, int(rating))
 
-    player_file = open("apps\\player.txt", "wb")
+    player_file = open("player.txt", "wb")
     pickle.dump(player, player_file)

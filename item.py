@@ -1,6 +1,6 @@
 class Item:
     name = ""
-    category = 0
+    category = ""
 
     def __init__(self, name, category):
         self.name = name

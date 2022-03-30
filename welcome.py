@@ -1,13 +1,14 @@
 import streamlit as st
 from multiapp import MultiApp
-from apps import home, recommendation, choice
+import home, recommendation, choice
 
 welcome = MultiApp()
 
 st.markdown("""
 # Sistema de Recomendação de Jogos
 
-Este é um sistema de recomendação desenvolvido pela equipe: Gabriel Alexander, Helder Melik, Vinicius Soares.
+Este é um sistema de recomendação desenvolvido pela equipe: Gabriel Alexander F. de L. Teixeira, Helder Melik Schramm, 
+Vinicius Soares da Costa.
 
 """)
 
