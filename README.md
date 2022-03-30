@@ -7,4 +7,4 @@ A Equipe responsável pelo sistema:
 * Vinicius Soares da Costa
 
 A técnica de recomendação utilizada para este projeto foi Pearson, baseando-se no estilo de cada usuário dentro do sistema para fazer a recomendação.
-O front do projeto foi desenvolvido usando Streamlit, em conjunto com o componente Streamlit-player, que reproduz vídeos no website gerado com o Streamlit.
+O front do projeto foi desenvolvido usando Streamlit.
