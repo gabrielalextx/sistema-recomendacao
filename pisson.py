@@ -66,6 +66,18 @@ def computeNearestNeighbor(username, user_list):
     sorted(distances, key=lambda x: x[0])
     return distances
 
+
+def c_computeNearestNeighbor(item, item_list):
+    """creates a sorted list of users based on their distance to username"""
+    distances = []
+    for i in item_list:
+        if i != item:
+            distance = manhattan(item.categories, i.categories)
+            distances.append((distance, i))
+    # sort based on distance -- closest first
+    sorted(distances, key=lambda x: x[0])
+    return distances
+
 def recommend(username, user_list):
     """Give list of recommendations"""
     # first find nearest neighbor
