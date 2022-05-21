@@ -1,3 +1,8 @@
+from content_item import CItem
+import random
+import pickle
+
+
 def content_main():
     games = {
         'The Witcher 3': {'RPG': 4.5, 'Adventure': 5.0, 'Story Rich': 5.0, 'Open World': 5.0, 'Game Time': 5.0},
@@ -51,3 +56,27 @@ def content_main():
         'Destiny 2': {'FPS': 4.0, 'Multiplayer': 5.0, 'Co-op': 4.0, 'Open World': 3.0, 'Game Time': 5.0},
         'Dark Souls 3': {'RPG': 4.0, 'Action': 5.0, 'Multiplayer': 3.0, 'Open World': 5.0, 'Game Time': 2.5}
     }
+
+    list_items = []
+    for i in games.keys():
+        x = CItem(i, games[i])
+        list_items.append(x)
+
+    print(list_items)
+
+    player_initial_recommendations = []
+    while len(player_initial_recommendations) < 3:
+        it = random.choice(list_items)
+        if it not in player_initial_recommendations:
+            player_initial_recommendations.append(it)
+
+    print(player_initial_recommendations)
+
+    file1 = open("list_items.txt", "wb")
+    pickle.dump(list_items, file1)
+
+    file3 = open("player_initial_recommendations.txt", "wb")
+    pickle.dump(player_initial_recommendations, file3)
+
+
+content_main()
