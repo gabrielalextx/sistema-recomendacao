@@ -19,8 +19,8 @@ def manhattan(rating1, rating2):
        of the form {'The Strokes': 3.0, 'Slightly Stoopid': 2.5}"""
     distance = 0
     total = 0
-    for key in rating1:
-        if key in rating2:
+    for key in rating1.keys():
+        if key in rating2.keys():
             distance += abs(rating1[key] - rating2[key])
             total += 1
     if total > 0:
@@ -76,8 +76,8 @@ def c_computeNearestNeighbor(item, item_list):
             distance = manhattan(item.categories, i.categories)
             distances.append((distance, i))
     # sort based on distance -- closest first
-    sorted(distances, key=lambda x: x[0])
-    return distances
+    sorted_distances = sorted(distances, key=lambda x: x[0])
+    return sorted_distances
 
 def recommend(username, user_list):
     """Give list of recommendations"""

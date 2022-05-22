@@ -4,6 +4,10 @@ import pickle
 
 
 def content_main():
+    """Roguelike|Horror|RPG|Adventure|Story Rich|Open World|Game
+    Time|Action|Multiplayer|Singleplayer|FPS|Co-op|Competitive|Indie|Survival|Strategy """
+    tags = ['RPG', 'Adventure', 'Story Rich', 'Open World', 'Game Time', 'Action', 'Multiplayer', 'Singleplayer', 'FPS',
+            'Co-op', 'Competitive', 'Indie', 'Survival', 'Horror', 'Roguelike', 'Strategy']
     games = {
         'The Witcher 3': {'RPG': 4.5, 'Adventure': 5.0, 'Story Rich': 5.0, 'Open World': 5.0, 'Game Time': 5.0},
         'The Witcher 2': {'RPG': 4.0, 'Adventure': 4.5, 'Story Rich': 5.0, 'Open World': 4.0, 'Game Time': 3.0},
@@ -12,9 +16,9 @@ def content_main():
         'Detroit: Become Human': {'Action': 3.0, 'Adventure': 3.5, 'Story Rich': 5.0, 'Singleplayer': 5.0, 'Game Time': 2.0},
         'CS: GO': {'FPS': 5.0, 'Multiplayer': 5.0, 'Action': 5.0, 'Co-op': 3.0, 'Competitive': 5.0},
         'Valorant': {'FPS': 5.0, 'Multiplayer': 5.0, 'Action': 0.0, '?': 0.0, 'Competitive': 5.0},
-        'COD: Modern Warfare': {'FPS': 5.0, 'Multiplayer': 4.0, 'Action': 5.0, 'Co-op': 2.0, 'Competitivo': 4.0},
-        'Rainbow Six Siege': {'FPS': 4.0, 'Multiplayer': 5.0, 'Action': 5.0, 'Co-op': 1.0, 'Competitivo': 5.0},
-        'Back 4 Blood': {'FPS': 3.5, 'Multiplayer': 4.5, 'Action': 5.0, 'Co-op': 4.5, 'Competitivo': 2.0},
+        'COD: Modern Warfare': {'FPS': 5.0, 'Multiplayer': 4.0, 'Action': 5.0, 'Co-op': 2.0, 'Competitive': 4.0},
+        'Rainbow Six Siege': {'FPS': 4.0, 'Multiplayer': 5.0, 'Action': 5.0, 'Co-op': 1.0, 'Competitive': 5.0},
+        'Back 4 Blood': {'FPS': 3.5, 'Multiplayer': 4.5, 'Action': 5.0, 'Co-op': 4.5, 'Competitive': 2.0},
         'Disco Elysium': {'RPG': 4.0, 'Indie': 4.0, 'Story Rich': 4.0, 'Open World': 3.5, 'Game Time': 2.5},
         'Dying Light 2 Stay Human': {'Survival': 4.0, 'Action': 3.5, 'Story Rich': 2.0, 'Open World': 3.0, 'Game Time': 3.5},
         'Red Dead Redemption 2': {'FPS': 2.0, 'Adventure': 4.0, 'Story Rich': 5.0, 'Open World': 5.0, 'Game Time': 5.0},
@@ -50,12 +54,17 @@ def content_main():
         'Civilization VI': {'Strategy': 5.0, 'Multiplayer': 4.0, 'Co-op': 2.5, 'Singleplayer': 3.5, 'Action': 2.0},
         'Total War: Warhammer II': {'Strategy': 5.0, 'Action': 4.5, 'Multiplayer': 3.0, 'Co-op': 3.0, 'Game Time': 5.0},
         'Crusader Kings 3': {'Strategy': 5.0, 'RPG': 2.0, 'Singleplayer': 4.0, 'Multiplayer': 3.0, 'Game Time': 5.0},
-        'Halo Infinite': {'FPS': 5.0, 'Multiplayer': 4.5, 'Competitivo': 4.0, 'Story Rich': 3.0, 'Game Time': 2.0},
+        'Halo Infinite': {'FPS': 5.0, 'Multiplayer': 4.5, 'Competitive': 4.0, 'Story Rich': 3.0, 'Game Time': 2.0},
         'It Takes Two': {'Co-op': 4.5, 'Story Rich': 5.0, 'Action': 4.0, 'Adventure': 4.0, 'Game Time': 2.0},
-        'Apex Legends': {'FPS': 5.0, 'Multiplayer': 5.0, 'Action': 4.0, 'Co-op': 4.0, 'Competitivo': 4.5},
+        'Apex Legends': {'FPS': 5.0, 'Multiplayer': 5.0, 'Action': 4.0, 'Co-op': 4.0, 'Competitive': 4.5},
         'Destiny 2': {'FPS': 4.0, 'Multiplayer': 5.0, 'Co-op': 4.0, 'Open World': 3.0, 'Game Time': 5.0},
         'Dark Souls 3': {'RPG': 4.0, 'Action': 5.0, 'Multiplayer': 3.0, 'Open World': 5.0, 'Game Time': 2.5}
     }
+
+    for game in games.keys():
+        for tag in tags:
+            if tag not in games[game].keys():
+                games[game][tag] = 1.0
 
     list_items = []
     for i in games.keys():

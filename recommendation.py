@@ -28,8 +28,10 @@ def app():
 
 
     for i in range(len(player_recommendation)):
-        print(player_recommendation[i][0][1].name)
-        #print(player_recommendation[i][1].name)
+        st.write(f"Jogos similares a {player_recommendation[i][0][1].name}:")
+        for j in range(3):
+            print(player_recommendation[i][j+1][1].name)
+            st.write(player_recommendation[i][j+1][1].name)
     
     
 
