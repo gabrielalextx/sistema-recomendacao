@@ -62,7 +62,7 @@ def content_main():
         x = CItem(i, games[i])
         list_items.append(x)
 
-    print(list_items)
+    print(list_items[0].categories)
 
     player_initial_recommendations = []
     while len(player_initial_recommendations) < 3:
